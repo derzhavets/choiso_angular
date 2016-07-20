@@ -1,9 +1,18 @@
 Rails.application.routes.draw do
+  scope '/api' do
+    mount_devise_token_auth_for 'User', at: 'auth'
+  end
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
+  
+  root 'application#angular'
+  
 
   # You can have the root of your site routed with "root"
-  root 'application#angular'
+  #scope '/api' do
+  #  mount_devise_token_auth_for 'User', at: '/auth'
+  #end
+  
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

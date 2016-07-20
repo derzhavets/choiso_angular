@@ -11,15 +11,10 @@
 // about supported directives.
 //
 //= require angular
+//= require angular-rails-templates
 //= require angular-ui-router
+//= require angular-cookie
+//= require ng-token-auth
 //= require jquery
 //= require jquery_ujs
 //= require_tree .
-
-angular.module('choiso', [])
-.controller('MainCtrl', [
-    '$scope',
-    function($scope){
-        $scope.test = 'Hello world!';
-    }
-]);
