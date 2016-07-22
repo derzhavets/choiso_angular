@@ -5,9 +5,15 @@ Rails.application.routes.draw do
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
   
-  root 'application#angular'
+  resources :alternatives, only: [:index, :create, :destroy]
   
-
+  root 'application#angular'
+  resources :users, only: [:show] do
+    resources :alternatives, only: [:index, :create, :destroy] do
+      resources :requirements
+    end
+  end
+  
   # You can have the root of your site routed with "root"
   #scope '/api' do
   #  mount_devise_token_auth_for 'User', at: '/auth'

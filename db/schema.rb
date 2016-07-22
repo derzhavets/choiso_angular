@@ -11,7 +11,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160720151840) do
+ActiveRecord::Schema.define(version: 20160722065947) do
+
+  create_table "alternatives", force: :cascade do |t|
+    t.string   "name"
+    t.integer  "user_id"
+    t.integer  "proposer_id"
+    t.integer  "rank"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  add_index "alternatives", ["proposer_id"], name: "index_alternatives_on_proposer_id"
+  add_index "alternatives", ["user_id"], name: "index_alternatives_on_user_id"
 
   create_table "users", force: :cascade do |t|
     t.string   "provider",               default: "email", null: false

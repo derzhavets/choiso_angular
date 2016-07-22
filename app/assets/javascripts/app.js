@@ -1,4 +1,5 @@
 angular.module('choiso', ['ui.router', 'ui.bootstrap', 'templates', 'ng-token-auth'])
+
 .config([
     '$stateProvider', 
     '$urlRouterProvider', 
@@ -7,7 +8,12 @@ angular.module('choiso', ['ui.router', 'ui.bootstrap', 'templates', 'ng-token-au
             .state('home', {
                 url: '/home',
                 templateUrl: 'views/welcome/home.html',
-                controller: 'HomeCtrl'
+                controller: 'HomeCtrl',
+                resolve: {
+                  alternatives: ['alternatives', function(alternatives){
+                    return alternatives.getAll();
+                  }]
+                }
             })
             
             .state('sign_in', {
@@ -20,7 +26,7 @@ angular.module('choiso', ['ui.router', 'ui.bootstrap', 'templates', 'ng-token-au
                 url: '/sign_up',
                 templateUrl: 'views/user_registrations/new.html',
                 controller: 'RegistrationsCtrl'
-            })
+            });
     }
 ])
 
