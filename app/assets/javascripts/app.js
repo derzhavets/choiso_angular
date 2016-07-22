@@ -1,4 +1,4 @@
-angular.module('choiso', ['ui.router', 'templates', 'ng-token-auth'])
+angular.module('choiso', ['ui.router', 'ui.bootstrap', 'templates', 'ng-token-auth'])
 .config([
     '$stateProvider', 
     '$urlRouterProvider', 
@@ -9,6 +9,7 @@ angular.module('choiso', ['ui.router', 'templates', 'ng-token-auth'])
                 templateUrl: 'views/welcome/home.html',
                 controller: 'HomeCtrl'
             })
+            
             .state('sign_in', {
                 url: '/sign_in',
                 templateUrl: 'views/user_sessions/new.html',

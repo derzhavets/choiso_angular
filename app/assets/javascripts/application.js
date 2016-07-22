@@ -14,6 +14,7 @@
 //= require angular-rails-templates
 //= require angular-ui-router
 //= require angular-cookie
+//= require angular-bootstrap
 //= require ng-token-auth
 //= require jquery
 //= require jquery_ujs

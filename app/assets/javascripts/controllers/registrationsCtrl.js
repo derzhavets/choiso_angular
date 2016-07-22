@@ -3,10 +3,7 @@ angular.module('choiso')
     $scope.submitRegistration = function() {
       $auth.submitRegistration($scope.registrationForm)
         .then(function() { 
-          $auth.submitLogin({
-            email: $scope.registrationForm.email,
-            password: $scope.registrationForm.password
-          });
+          $location.path('/home'); 
         });
         
      $scope.$on('auth:registration-email-error', function(ev, reason) {
