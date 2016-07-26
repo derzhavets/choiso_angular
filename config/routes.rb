@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   
   root 'application#angular'
   resources :users, only: [:show] do
-    resources :alternatives, only: [:index, :create, :destroy] do
+    resources :alternatives, only: [:index, :create, :destroy, :show] do
       resources :requirements
     end
   end

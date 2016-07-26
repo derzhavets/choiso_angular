@@ -1,8 +1,9 @@
 angular.module('choiso')
-  .directive('alternatives', function(){
+  .directive('ownAlternatives', function(){
     return {
+      replace: true,
       restrict: 'E',
       templateUrl: 'views/alternatives/index.html',
-      controller: 'AlternativesCtrl'
+      controller: 'AlternativesIndexController'
     };
   })

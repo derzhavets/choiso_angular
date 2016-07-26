@@ -1,11 +1,17 @@
 class AlternativesController < ApplicationController
   def index
     user = User.find(params[:user_id])
-    respond_with user.alternatives
+    if params[:proposer_id]
+      proposer = User.find(params[:proposer_id])
+      respond_with user.alternatives.proposed_by(proposer)
+    else
+      respond_with user.alternatives
+    end
   end
   
   def create
-    respond_with Alternative.create(alternative_params.merge(user_id: params[:user_id]))
+    alternative = Alternative.create(alternative_params.merge(user_id: params[:user_id]))
+    respond_with alternative
   end
   
   def destroy
@@ -14,9 +20,13 @@ class AlternativesController < ApplicationController
     respond_with alternative
   end
   
+  def show
+    respond_with Alternative.find(params[:id])
+  end
+  
   private
   
   def alternative_params
-      params.require(:alternative).permit(:name, :user_id)
+      params.require(:alternative).permit(:name, :proposer_id)
   end
 end
