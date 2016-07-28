@@ -12,6 +12,9 @@ Rails.application.routes.draw do
     resources :alternatives, only: [:index, :create, :destroy, :show] do
       resources :requirements
     end
+    member do
+      get 'proposals', to: 'proposals#index'
+    end
   end
   
   # You can have the root of your site routed with "root"

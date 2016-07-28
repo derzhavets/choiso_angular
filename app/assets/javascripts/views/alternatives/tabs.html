@@ -1,0 +1,9 @@
+<ul class="nav nav-tabs" id="alternatives-tabs">
+  <li role="presentation"
+    ng-repeat="alternative in alternatives"
+    ng-class="{'active': isActive(alternative)}">
+    <a href="" ng-click="toggleAlternative(alternative)">
+      <h4>{{alternative.name}}</h4>
+    </a>
+  </li>
+</ul>

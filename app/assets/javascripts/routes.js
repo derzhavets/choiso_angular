@@ -19,7 +19,7 @@ angular.module('choiso')
         .state('home', {
           url: '/home',
           templateUrl: 'views/welcome/home.html',
-          controller: 'HomeCtrl',
+          controller: 'HomeController',
           resolve: {
             auth: function($auth){
               return $auth.validateUser();

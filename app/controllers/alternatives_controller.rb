@@ -5,7 +5,7 @@ class AlternativesController < ApplicationController
       proposer = User.find(params[:proposer_id])
       respond_with user.alternatives.proposed_by(proposer)
     else
-      respond_with user.alternatives
+      respond_with user.alternatives.where(proposer: user)
     end
   end
   
