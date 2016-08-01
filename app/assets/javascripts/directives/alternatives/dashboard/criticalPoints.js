@@ -5,6 +5,9 @@ angular.module('choiso')
     templateUrl: 'views/alternatives/dashboard/criticalPoints.html',
     scope: {
       alternative: "="
+    },
+    link: function(scope, element, attrs){
+      
     }
   };
 });

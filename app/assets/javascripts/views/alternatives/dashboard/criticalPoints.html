@@ -1,1 +1,16 @@
-<h1>This is critical points for {{alternative.name}}</h1>
+<div class="col-md-12">
+  <br />
+</div>
+
+<div class="col-md-12">
+  <h4>Define which of your traits are critical to become {{alternative.name}}</h4>
+</div>
+
+<div ng-controller="sortableController" class="col-md-12">
+  <ul class="list-group critical-points-container" ui-sortable="sortableOptions" ng-model="alternative.criticalPoints">
+    <li class="list-group-item" ng-repeat="point in alternative.criticalPoints">{{point.name}}</li>
+    <div ng-show="alternative.criticalPoints.length === 0"class="text-center critical-points-container-placeholder">
+      <i>Drag critical points (from your traits lists) here</i>
+    </div>
+  </ul>
+</div>

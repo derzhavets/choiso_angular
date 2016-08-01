@@ -21,7 +21,8 @@
     "ng-token-auth": "^0.0.29",
     "angular-bootstrap": "^2.0.0",
     "AngularDevise": "angular-devise#^1.3.0",
-    "angular-resource": "^1.5.8"
+    "angular-resource": "^1.5.8",
+    "angular-ui-sortable": "^0.14.3"
   },
   "resolutions": {
     "angular": ">=1.4 <=1.5.3"

@@ -11,9 +11,11 @@
 // about supported directives.
 //
 //= require jquery
+//= require jquery-ui
 //= require angular
 //= require angular-rails-templates
 //= require angular-ui-router
+//= require angular-ui-sortable
 //= require angular-resource
 //= require angular-cookie
 //= require angular-bootstrap

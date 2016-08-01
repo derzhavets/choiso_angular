@@ -1,1 +1,40 @@
-<h1>This is requirements for {{alternative.name}}</h1>
+<div class="col-md-12">
+  <br />
+</div>
+
+<div class="col-md-12">
+  <h4>Define and evaluate yourself for requirements for {{alternative.name}}</h4>    
+</div>
+
+<div class="col-md-12">
+  <form id="newRequirement">
+    <div class="input-group">
+      <input type="text" ng-model="newRequirement.name" class="form-control" placeholder="Type your requirement here">
+      <span class="input-group-btn">
+        <button class="btn btn-primary" type="submit" ng-click="createRequirement()">Add</button>
+        <button class="btn btn-success">Show proposals</button>
+      </span>
+    </div>
+  </form>    
+</div>
+
+<div class="col-md-12">
+  <br />
+</div>
+
+<div class="col-md-12">
+  <ul class="list-group">
+    <li class="list-group-item" ng-repeat="requirement in alternative.requirements">
+      <div class="row">
+        <div class="col-md-8">
+          <span class="glyphicon glyphicon-remove" aria-hidden="true" style="color:#cbcbcb;" ng-click="destroyRequirement(requirement)"></span>
+          <span>&nbsp;&nbsp;</span>
+          <span>{{requirement.name}}</span>
+        </div>
+        <div class="col-md-4">
+          <evaluation-scale scale="3" evaluable="requirement"></evaluation-scale>
+        </div>
+      </div>
+    </li>
+  </ul>
+</div>

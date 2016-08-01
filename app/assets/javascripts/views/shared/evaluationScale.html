@@ -1,0 +1,13 @@
+<div>
+  <div class="btn-group btn-group-justified" role="group" aria-label="...">
+    <div ng-repeat="i in getNumber(scale) track by $index" 
+          ng-click="storeValue($index + 1)"
+          class="btn btn-default" 
+          ng-mouseover="setHoverClass($index + 1)"
+          ng-mouseleave="resetHoverClass()"
+          ng-class="{ 'btn-success': evaluable.lastEvaluation >= ($index + 1) }">
+    </div>
+  </div>
+</div>
+
+<!--Evaluation point: {{evaluable.lastEvaluation}}-->
