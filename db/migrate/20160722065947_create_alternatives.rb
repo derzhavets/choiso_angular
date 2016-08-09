@@ -3,7 +3,7 @@ class CreateAlternatives < ActiveRecord::Migration
     create_table :alternatives do |t|
       t.string :name
       t.references :user, index: true, foreign_key: true
-      t.references :proposer, index: true, foreign_key: true
+      t.integer :proposer_id, index: true, foreign_key: true
       t.integer :rank
 
       t.timestamps null: false
