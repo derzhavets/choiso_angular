@@ -18,10 +18,7 @@ angular.module('choiso')
           });
           $scope.newAlternative.name = "";
         };
-        
-        $scope.printScope = function(){
-          console.log($scope);
-        }
+
       }
     };
   })

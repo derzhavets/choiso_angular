@@ -14,20 +14,24 @@
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
-        <li ng-show="user.id" class="active"><a ng-href="#/home">Home <span class="sr-only">(current)</span></a></li>
+        <li ng-show="user.id"><a ng-href="#/home">Home <span class="sr-only">(current)</span></a></li>
+        <li ng-show="user.id" ng-class="{active:alternativesBlockActive}" ng-click="toggleActiveBlock('alternatives')"><a href="">Alternatives <span class="sr-only">(current)</span></a></li>
+        <li ng-show="user.id" ng-class="{active:mirrorBlockActive}" ng-click="toggleActiveBlock('mirror')"><a href="">Mirror <span class="sr-only">(current)</span></a></li>
+        <li ng-show="user.id" ng-class="{active:analyzeBlockActive}" ng-click="toggleActiveBlock('analyze')"><a href="">Analyze <span class="sr-only">(current)</span></a></li>
 
       </ul>
+      
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="#">Something</a></li>
-        <li ng-hide="user.id" class="active"><a ng-href="#/sign_in">Sign in</a></li>
-        <li ng-hide="user.id" class="active"><a ng-href="#/sign_up">Sign Un</a></li>
+        <li ng-show="user.id"><a href="" ng-click="printScope()">Show scope</a></li>
+        <li ng-hide="user.id"><a ng-href="#/sign_in">Sign in</a></li>
+        <li ng-hide="user.id"><a ng-href="#/sign_up">Sign Up</a></li>
         <li ng-show="user.id" uib-dropdown>
-            <a uib-dropdown-toggle>{{user.first_name}} <span class="caret"></span></a>
+            <a href="" uib-dropdown-toggle>{{user.first_name}} <span class="caret"></span></a>
             <ul uib-dropdown-menu>
-                <li><a ui-sref="a">Profile</a></li>
-                <li><a ui-sref="b">My friends</a></li>
+                <li><a href="" ui-sref="a">Profile</a></li>
+                <li><a href="" ui-sref="b">My friends</a></li>
                 <li role="separator" class="divider"></li>
-                <li><a ng-click="signOut()">Sign out</a></li>
+                <li><a href="" ng-click="logOut()">Sign out</a></li>
             </ul>
         </li>
       </ul>

@@ -8,7 +8,18 @@
 
 <div ng-controller="sortableController" class="col-md-12">
   <ul class="list-group critical-points-container" ui-sortable="sortableOptions" ng-model="alternative.criticalPoints">
-    <li class="list-group-item" ng-repeat="point in alternative.criticalPoints">{{point.name}}</li>
+    <li class="list-group-item" ng-repeat="point in alternative.criticalPoints">
+      <div class="row">
+        <div class="col-md-8">
+          <span class="glyphicon glyphicon-remove" aria-hidden="true" style="color:#cbcbcb;" ng-click="destroyTrait(attribute)"></span>
+          <span>&nbsp;&nbsp;</span>
+          <span>{{point.name}}</span>
+        </div>
+        <div class="col-md-4">
+          <evaluation-scale scale="3" evaluable="point"></evaluation-scale>
+        </div>
+      </div>
+    </li>
     <div ng-show="alternative.criticalPoints.length === 0"class="text-center critical-points-container-placeholder">
       <i>Drag critical points (from your traits lists) here</i>
     </div>

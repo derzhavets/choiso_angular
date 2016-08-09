@@ -2,7 +2,7 @@ angular.module('choiso')
 .config([
     '$stateProvider', 
     '$urlRouterProvider',
-    function($stateProvider, urlRouterProvider){
+    function($stateProvider, $urlRouterProvider){
       $stateProvider
         .state('sign_in', {
             url: '/sign_in',
@@ -21,8 +21,10 @@ angular.module('choiso')
           templateUrl: 'views/welcome/home.html',
           controller: 'HomeController',
           resolve: {
-            auth: function($auth){
-              return $auth.validateUser();
+            auth: function($auth, $state){
+              return $auth.validateUser().catch(function(){
+                $state.go('start');
+              });
             }
           }
         })
@@ -36,22 +38,14 @@ angular.module('choiso')
               return $auth.validateUser();
             }
           }
+        })
+        
+        .state('start', {
+          url: '/welcome',
+          templateUrl: 'views/welcome/start.html'
         });
-
-      } 
-])
-
-.service( 'getUserID', function($rootScope, $q) {
-  var deferred = $q.defer();
-  var unwatch = $rootScope.$watch('user.id', function(id) {
-    if (angular.isDefined(id)) {
-      // resolve the promise, as it seems to be defined now
-      deferred.resolve(id);
-      // remove the watch, because there's no more use for it
-      unwatch();
-    }
-  });
-  return function () {
-    return deferred.promise;
-  };
-})
+        
+      $urlRouterProvider.otherwise("/home");
+      }
+      
+]);

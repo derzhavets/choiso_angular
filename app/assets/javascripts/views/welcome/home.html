@@ -1,15 +1,17 @@
 <div class="row">
-  <div class="col-md-6 col-sm-6">
-    <own-alternatives></own-alternatives>
+  <div class="col-md-8 col-sm-8">
+    <div class="row">
+      <div ng-show="alternativesBlockActive" class="col-md-12">
+        <own-alternatives></own-alternatives>
+      </div>
+      <div ng-show="mirrorBlockActive" class="col-md-12">
+        <own-traits></own-traits>
+      </div>
+    </div>
   </div>
-
-  <div class="col-md-6 col-sm-6">
-    <own-traits></own-traits>
-  </div>  
-    
-  <!--<div class="col-md-4 col-sm-4">-->
-  <!--  <show-proposals></show-proposals>-->
-  <!--</div>-->
   
+  <div ng-show="proposalsBlockActive" class="col-md-4 col-sm-4">
+    <show-proposals></show-proposals>
+  </div>
 </div>
 

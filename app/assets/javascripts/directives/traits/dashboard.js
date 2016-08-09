@@ -34,6 +34,10 @@ angular.module('choiso')
         scope.alternative.criticalPoints.splice(index2, 1)
       };
       
+      scope.setActiveProposal = function(resource_name){
+        scope.$parent.setActiveProposal(resource_name);
+      };
+      
       // Sortable functions
       
       scope.sortableOptions = {

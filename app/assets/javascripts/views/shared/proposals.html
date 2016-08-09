@@ -1,22 +1,19 @@
 <div class="panel panel-default">
   <div class="panel-heading clearfix">
     <div class="panel-title pull-left">
-      Proposals and examples
+      Proposals and examples for {{activeProposals.resourceName}}
     </div>
   </div>
   <div class="panel-body">
-    <p>Select proposal to show:</p>
     <div class="form-group">
-      <select class="form-control" ng-model="proposal" ng-options="proposal.proposer for proposal in proposals" style="width:100%;"></select>
+      <select class="form-control" ng-model="proposal" ng-options="proposal.proposer for proposal in activeProposals" style="width:100%;">
+        <option value="">Select proposal to show</option>
+      </select>
     </div>
   
-  </div>
-    <table class="table table-striped">
-      <tbody>
-        <tr ng-repeat="prop in proposal.proposals">
-          <td>{{prop}}</td>
-        </tr>
-      </tbody>
-    </table>
+    <ul class="list-group" >
+      <li class="list-group-item" ng-repeat="prop in proposal.proposals">{{prop}}</li>
+    </ul>
+    
 </div>
     
