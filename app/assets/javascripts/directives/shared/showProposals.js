@@ -1,5 +1,5 @@
 angular.module('choiso')
-  .directive('showProposals', function($timeout){
+  .directive('showProposals', ['$timeout', function($timeout){
     return {
       replace: true,
       restrict: 'E',
@@ -68,4 +68,4 @@ angular.module('choiso')
         };
       }
     };
-  })
+  }]);

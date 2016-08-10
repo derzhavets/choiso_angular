@@ -1,5 +1,5 @@
 angular.module('choiso')
-.directive('alternativeDashboardHome', function($rootScope){
+.directive('alternativeDashboardHome', function(){
   return {
     restrict: 'E',
     templateUrl: 'views/alternatives/dashboard/home.html',

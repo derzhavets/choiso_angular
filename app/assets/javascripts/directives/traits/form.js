@@ -1,5 +1,5 @@
 angular.module('choiso')
-.directive('traitForm', function(Alternative){
+.directive('traitForm', function(){
   return {
     replace: true,
     restrict: 'E',

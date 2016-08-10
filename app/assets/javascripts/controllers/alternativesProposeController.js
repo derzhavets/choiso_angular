@@ -1,5 +1,5 @@
 angular.module('choiso')
-.controller('AlternativesProposeController', function(Alternative, User, $scope, $stateParams){
+.controller('AlternativesProposeController', [ 'Alternative', 'User', '$scope', '$stateParams', function(Alternative, User, $scope, $stateParams){
   $scope.friend = User.get({userId: $stateParams.id}, function(){
     $scope.alternatives = Alternative.query({
       userId: $scope.friend.id,
@@ -31,4 +31,4 @@ angular.module('choiso')
     );
   };
   
-});
+}]);

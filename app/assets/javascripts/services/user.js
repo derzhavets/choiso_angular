@@ -1,3 +1,4 @@
-angular.module('choiso').factory('User', function($resource){
+angular.module('choiso')
+.factory('User', ['$resource', function($resource){
   return $resource('/users/:userId.json', { userId: "@userId"});
-})
+}]);

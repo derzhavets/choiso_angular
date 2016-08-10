@@ -1,5 +1,5 @@
 angular.module('choiso')
-.directive('evaluationScale', function($timeout){
+.directive('evaluationScale', ['$timeout', function($timeout){
   return {
     restrict: 'E',
     templateUrl: 'views/shared/evaluationScale.html',
@@ -28,4 +28,4 @@ angular.module('choiso')
       };
       
     }};      
-})
+}]);

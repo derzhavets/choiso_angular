@@ -3,7 +3,7 @@ angular.module('choiso')
       return {
         restrict: 'E',
         templateUrl: "views/layouts/navbar.html",
-        controller: function($scope, $auth, $state){
+        controller: ['$scope', '$auth', '$state', function($scope, $auth, $state){
           
           // Initialize
           
@@ -34,6 +34,6 @@ angular.module('choiso')
           
           
           
-        }
+        }]
       };
   })

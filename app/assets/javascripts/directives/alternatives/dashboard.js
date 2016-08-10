@@ -1,5 +1,5 @@
 angular.module('choiso')
-.directive('alternativeDashboard', function(Alternative){
+.directive('alternativeDashboard', ['Alternative', function(Alternative){
   return {
     replace: true,
     restrict: 'E',
@@ -11,4 +11,4 @@ angular.module('choiso')
     link: function(scope, element, attrs, ngModelCtrl){
     }
   };
-});
+}]);

@@ -4,7 +4,7 @@ angular.module('choiso')
       replace: true,
       restrict: 'E',
       templateUrl: 'views/traits/own.html',
-      controller: function($scope){
+      controller: ['$scope', function($scope){
         $scope.traitsLists = [
           {
             name: "Strengths",
@@ -24,6 +24,6 @@ angular.module('choiso')
           }
         ];
         
-      }
+      }]
     };
   })

@@ -1,5 +1,5 @@
 angular.module('choiso')
-.directive('traitListDashboard', function($rootScope, $timeout){
+.directive('traitListDashboard', ['$rootScope', '$timeout', function($rootScope, $timeout){
   return {
     replace: true,
     restrict: 'E',
@@ -50,4 +50,4 @@ angular.module('choiso')
       };
     }
   };
-});
+}]);

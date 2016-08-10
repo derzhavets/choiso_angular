@@ -4,7 +4,7 @@ angular.module('choiso')
       replace: true,
       restrict: 'E',
       templateUrl: 'views/alternatives/own.html',
-      controller: function($scope){
+      controller: ['$scope', function($scope){
         $scope.alternatives = [];
         
         $scope.createAlternative = function(){
@@ -19,6 +19,6 @@ angular.module('choiso')
           $scope.newAlternative.name = "";
         };
 
-      }
+      }]
     };
   })

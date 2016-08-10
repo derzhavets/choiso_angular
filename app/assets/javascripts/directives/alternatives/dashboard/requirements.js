@@ -1,5 +1,5 @@
 angular.module('choiso')
-.directive('alternativeDashboardRequirements', function($rootScope){
+.directive('alternativeDashboardRequirements', ['$rootScope', function($rootScope){
   return {
     restrict: 'E',
     templateUrl: 'views/alternatives/dashboard/requirements.html',
@@ -25,4 +25,4 @@ angular.module('choiso')
       
     }
   };
-});
+}]);
