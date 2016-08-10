@@ -33,11 +33,11 @@ angular.module('choiso')
           url: '/users/{id}',
           templateUrl: 'views/users/show.html',
           controller: 'UserShowController',
-          resolve: {
-            auth: function($auth){
-              return $auth.validateUser();
-            }
-          }
+          // resolve: {
+          //   auth: function($auth){
+          //     return $auth.validateUser();
+          //   }
+          // }
         })
         
         .state('start', {
